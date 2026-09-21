@@ -1,12 +1,20 @@
-brukernavn = "erlber"
-passord = "qwerty123456!"
+
+brukere = [["erlber", "qwerty123456!"],["pavlo", "abc"], ["robert", "123"]]
+
 
 def login():
     b = input("brukernavn: ")
     p = input("passord: ")
-    if b == brukernavn and p == passord:
-        print("du har logget inn...")
-        return True
+
+    if b in brukere and p in brukere:
+        print("yes!!")
+
+
+    for bruker in brukere:
+        if b == bruker[0] and p == bruker[1]:
+            print("du har logget inn...")
+            return True
+
     else:
         print("du har tastet feil brukernavn eller passord")
         return False
