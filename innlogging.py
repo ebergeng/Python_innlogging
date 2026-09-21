@@ -1,3 +1,15 @@
+brukernavn = "erlber"
+passord = "qwerty123456!"
+
+def login():
+    b = input("brukernavn: ")
+    p = input("passord: ")
+    if b == brukernavn and p == passord:
+        print("du har logget inn...")
+        return True
+    else:
+        print("du har tastet feil brukernavn eller passord")
+        return False
 
 def vis_startmeny():
     print("\n=== STARTMENY ===")
@@ -7,9 +19,10 @@ def vis_startmeny():
     valg = input("Hva ønsker du å gjøre? ")
 
     if valg == "1":
-        # logikk for innloggging
-        print("du er logget inn")
-        return "innlogget"
+        if login():
+            return "innlogget"
+        else:
+            return "start"
 
     elif valg == "2":
         #logikk for registrere ny bruker
